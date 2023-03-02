@@ -1,0 +1,72 @@
+|e38
+y7 <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+a => inst11.IN0
+a => inst12.IN0
+a => inst13.IN0
+a => inst14.IN0
+a => inst.IN0
+b => inst11.IN1
+b => inst12.IN1
+b => inst1.IN0
+b => inst15.IN1
+b => inst16.IN1
+c => inst11.IN2
+c => inst2.IN0
+c => inst13.IN2
+c => inst15.IN2
+c => inst17.IN2
+y6 <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+y5 <= inst13.DB_MAX_OUTPUT_PORT_TYPE
+y4 <= inst14.DB_MAX_OUTPUT_PORT_TYPE
+y3 <= inst15.DB_MAX_OUTPUT_PORT_TYPE
+y2 <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+y1 <= inst17.DB_MAX_OUTPUT_PORT_TYPE
+y0 <= <GND>
+qq[0] <= decoder:inst4.qq[0]
+qq[1] <= decoder:inst4.qq[1]
+qq[2] <= decoder:inst4.qq[2]
+qq[3] <= decoder:inst4.qq[3]
+qq[4] <= decoder:inst4.qq[4]
+qq[5] <= decoder:inst4.qq[5]
+qq[6] <= decoder:inst4.qq[6]
+qq[7] <= decoder:inst4.qq[7]
+aa[0] => decoder:inst4.aa[0]
+aa[1] => decoder:inst4.aa[1]
+aa[2] => decoder:inst4.aa[2]
+
+
+|e38|decoder:inst4
+aa[0] => Mux0.IN10
+aa[0] => Mux1.IN10
+aa[0] => Mux2.IN10
+aa[0] => Mux3.IN10
+aa[0] => Mux4.IN10
+aa[0] => Mux5.IN10
+aa[0] => Mux6.IN10
+aa[0] => Mux7.IN10
+aa[1] => Mux0.IN9
+aa[1] => Mux1.IN9
+aa[1] => Mux2.IN9
+aa[1] => Mux3.IN9
+aa[1] => Mux4.IN9
+aa[1] => Mux5.IN9
+aa[1] => Mux6.IN9
+aa[1] => Mux7.IN9
+aa[2] => Mux0.IN8
+aa[2] => Mux1.IN8
+aa[2] => Mux2.IN8
+aa[2] => Mux3.IN8
+aa[2] => Mux4.IN8
+aa[2] => Mux5.IN8
+aa[2] => Mux6.IN8
+aa[2] => Mux7.IN8
+qq[0] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+qq[1] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+qq[2] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+qq[3] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+qq[4] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+qq[5] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+qq[6] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+qq[7] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

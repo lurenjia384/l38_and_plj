@@ -1,0 +1,335 @@
+|all
+AA[0] <= decoder:inst.led7s[0]
+AA[1] <= decoder:inst.led7s[1]
+AA[2] <= decoder:inst.led7s[2]
+AA[3] <= decoder:inst.led7s[3]
+AA[4] <= decoder:inst.led7s[4]
+AA[5] <= decoder:inst.led7s[5]
+AA[6] <= decoder:inst.led7s[6]
+clk1 => control:inst12.clk
+clk2 => cnt10:inst8.clk
+BB[0] <= decoder:inst1.led7s[0]
+BB[1] <= decoder:inst1.led7s[1]
+BB[2] <= decoder:inst1.led7s[2]
+BB[3] <= decoder:inst1.led7s[3]
+BB[4] <= decoder:inst1.led7s[4]
+BB[5] <= decoder:inst1.led7s[5]
+BB[6] <= decoder:inst1.led7s[6]
+CC[0] <= <GND>
+CC[1] <= <GND>
+CC[2] <= <GND>
+CC[3] <= <GND>
+CC[4] <= <GND>
+CC[5] <= <GND>
+CC[6] <= <GND>
+DD[0] <= <GND>
+DD[1] <= <GND>
+DD[2] <= <GND>
+DD[3] <= <GND>
+DD[4] <= <GND>
+DD[5] <= <GND>
+DD[6] <= <GND>
+
+
+|all|decoder:inst
+din[0] => Mux0.IN19
+din[0] => Mux1.IN19
+din[0] => Mux2.IN19
+din[0] => Mux3.IN19
+din[0] => Mux4.IN19
+din[0] => Mux5.IN19
+din[0] => Mux6.IN19
+din[1] => Mux0.IN18
+din[1] => Mux1.IN18
+din[1] => Mux2.IN18
+din[1] => Mux3.IN18
+din[1] => Mux4.IN18
+din[1] => Mux5.IN18
+din[1] => Mux6.IN18
+din[2] => Mux0.IN17
+din[2] => Mux1.IN17
+din[2] => Mux2.IN17
+din[2] => Mux3.IN17
+din[2] => Mux4.IN17
+din[2] => Mux5.IN17
+din[2] => Mux6.IN17
+din[3] => Mux0.IN16
+din[3] => Mux1.IN16
+din[3] => Mux2.IN16
+din[3] => Mux3.IN16
+din[3] => Mux4.IN16
+din[3] => Mux5.IN16
+din[3] => Mux6.IN16
+led7s[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+led7s[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+led7s[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+led7s[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+led7s[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+led7s[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+led7s[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|all|LOCKIS:inst4
+le => qq[0]$latch.LATCH_ENABLE
+le => qq[1]$latch.LATCH_ENABLE
+le => qq[2]$latch.LATCH_ENABLE
+le => qq[3]$latch.LATCH_ENABLE
+dd[0] => qq[0]$latch.DATAIN
+dd[1] => qq[1]$latch.DATAIN
+dd[2] => qq[2]$latch.DATAIN
+dd[3] => qq[3]$latch.DATAIN
+qq[0] <= qq[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+qq[1] <= qq[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+qq[2] <= qq[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+qq[3] <= qq[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|all|control:inst12
+clk => current_state[0].CLK
+clk => current_state[1].CLK
+clk => current_state[2].CLK
+clk => current_state[3].CLK
+cs <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+clr <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+le <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|all|cnt10:inst8
+clk => qq[0]~reg0.CLK
+clk => qq[1]~reg0.CLK
+clk => qq[2]~reg0.CLK
+clk => qq[3]~reg0.CLK
+clr => qq[0]~reg0.ACLR
+clr => qq[1]~reg0.ACLR
+clr => qq[2]~reg0.ACLR
+clr => qq[3]~reg0.ACLR
+cs => qq[0]~reg0.ENA
+cs => qq[3]~reg0.ENA
+cs => qq[2]~reg0.ENA
+cs => qq[1]~reg0.ENA
+qq[0] <= qq[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qq[1] <= qq[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qq[2] <= qq[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qq[3] <= qq[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+co <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|all|decoder:inst1
+din[0] => Mux0.IN19
+din[0] => Mux1.IN19
+din[0] => Mux2.IN19
+din[0] => Mux3.IN19
+din[0] => Mux4.IN19
+din[0] => Mux5.IN19
+din[0] => Mux6.IN19
+din[1] => Mux0.IN18
+din[1] => Mux1.IN18
+din[1] => Mux2.IN18
+din[1] => Mux3.IN18
+din[1] => Mux4.IN18
+din[1] => Mux5.IN18
+din[1] => Mux6.IN18
+din[2] => Mux0.IN17
+din[2] => Mux1.IN17
+din[2] => Mux2.IN17
+din[2] => Mux3.IN17
+din[2] => Mux4.IN17
+din[2] => Mux5.IN17
+din[2] => Mux6.IN17
+din[3] => Mux0.IN16
+din[3] => Mux1.IN16
+din[3] => Mux2.IN16
+din[3] => Mux3.IN16
+din[3] => Mux4.IN16
+din[3] => Mux5.IN16
+din[3] => Mux6.IN16
+led7s[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+led7s[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+led7s[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+led7s[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+led7s[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+led7s[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+led7s[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|all|LOCKIS:inst5
+le => qq[0]$latch.LATCH_ENABLE
+le => qq[1]$latch.LATCH_ENABLE
+le => qq[2]$latch.LATCH_ENABLE
+le => qq[3]$latch.LATCH_ENABLE
+dd[0] => qq[0]$latch.DATAIN
+dd[1] => qq[1]$latch.DATAIN
+dd[2] => qq[2]$latch.DATAIN
+dd[3] => qq[3]$latch.DATAIN
+qq[0] <= qq[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+qq[1] <= qq[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+qq[2] <= qq[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+qq[3] <= qq[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|all|cnt10:inst9
+clk => qq[0]~reg0.CLK
+clk => qq[1]~reg0.CLK
+clk => qq[2]~reg0.CLK
+clk => qq[3]~reg0.CLK
+clr => qq[0]~reg0.ACLR
+clr => qq[1]~reg0.ACLR
+clr => qq[2]~reg0.ACLR
+clr => qq[3]~reg0.ACLR
+cs => qq[0]~reg0.ENA
+cs => qq[3]~reg0.ENA
+cs => qq[2]~reg0.ENA
+cs => qq[1]~reg0.ENA
+qq[0] <= qq[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qq[1] <= qq[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qq[2] <= qq[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qq[3] <= qq[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+co <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|all|cnt10:inst10
+clk => qq[0]~reg0.CLK
+clk => qq[1]~reg0.CLK
+clk => qq[2]~reg0.CLK
+clk => qq[3]~reg0.CLK
+clr => qq[0]~reg0.ACLR
+clr => qq[1]~reg0.ACLR
+clr => qq[2]~reg0.ACLR
+clr => qq[3]~reg0.ACLR
+cs => qq[0]~reg0.ENA
+cs => qq[3]~reg0.ENA
+cs => qq[2]~reg0.ENA
+cs => qq[1]~reg0.ENA
+qq[0] <= qq[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qq[1] <= qq[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qq[2] <= qq[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qq[3] <= qq[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+co <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|all|cnt10:inst11
+clk => qq[0]~reg0.CLK
+clk => qq[1]~reg0.CLK
+clk => qq[2]~reg0.CLK
+clk => qq[3]~reg0.CLK
+clr => qq[0]~reg0.ACLR
+clr => qq[1]~reg0.ACLR
+clr => qq[2]~reg0.ACLR
+clr => qq[3]~reg0.ACLR
+cs => qq[0]~reg0.ENA
+cs => qq[3]~reg0.ENA
+cs => qq[2]~reg0.ENA
+cs => qq[1]~reg0.ENA
+qq[0] <= qq[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qq[1] <= qq[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qq[2] <= qq[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+qq[3] <= qq[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+co <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|all|decoder:inst2
+din[0] => Mux0.IN19
+din[0] => Mux1.IN19
+din[0] => Mux2.IN19
+din[0] => Mux3.IN19
+din[0] => Mux4.IN19
+din[0] => Mux5.IN19
+din[0] => Mux6.IN19
+din[1] => Mux0.IN18
+din[1] => Mux1.IN18
+din[1] => Mux2.IN18
+din[1] => Mux3.IN18
+din[1] => Mux4.IN18
+din[1] => Mux5.IN18
+din[1] => Mux6.IN18
+din[2] => Mux0.IN17
+din[2] => Mux1.IN17
+din[2] => Mux2.IN17
+din[2] => Mux3.IN17
+din[2] => Mux4.IN17
+din[2] => Mux5.IN17
+din[2] => Mux6.IN17
+din[3] => Mux0.IN16
+din[3] => Mux1.IN16
+din[3] => Mux2.IN16
+din[3] => Mux3.IN16
+din[3] => Mux4.IN16
+din[3] => Mux5.IN16
+din[3] => Mux6.IN16
+led7s[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+led7s[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+led7s[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+led7s[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+led7s[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+led7s[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+led7s[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|all|LOCKIS:inst6
+le => qq[0]$latch.LATCH_ENABLE
+le => qq[1]$latch.LATCH_ENABLE
+le => qq[2]$latch.LATCH_ENABLE
+le => qq[3]$latch.LATCH_ENABLE
+dd[0] => qq[0]$latch.DATAIN
+dd[1] => qq[1]$latch.DATAIN
+dd[2] => qq[2]$latch.DATAIN
+dd[3] => qq[3]$latch.DATAIN
+qq[0] <= qq[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+qq[1] <= qq[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+qq[2] <= qq[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+qq[3] <= qq[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|all|decoder:inst3
+din[0] => Mux0.IN19
+din[0] => Mux1.IN19
+din[0] => Mux2.IN19
+din[0] => Mux3.IN19
+din[0] => Mux4.IN19
+din[0] => Mux5.IN19
+din[0] => Mux6.IN19
+din[1] => Mux0.IN18
+din[1] => Mux1.IN18
+din[1] => Mux2.IN18
+din[1] => Mux3.IN18
+din[1] => Mux4.IN18
+din[1] => Mux5.IN18
+din[1] => Mux6.IN18
+din[2] => Mux0.IN17
+din[2] => Mux1.IN17
+din[2] => Mux2.IN17
+din[2] => Mux3.IN17
+din[2] => Mux4.IN17
+din[2] => Mux5.IN17
+din[2] => Mux6.IN17
+din[3] => Mux0.IN16
+din[3] => Mux1.IN16
+din[3] => Mux2.IN16
+din[3] => Mux3.IN16
+din[3] => Mux4.IN16
+din[3] => Mux5.IN16
+din[3] => Mux6.IN16
+led7s[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+led7s[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+led7s[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+led7s[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+led7s[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+led7s[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+led7s[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|all|LOCKIS:inst7
+le => qq[0]$latch.LATCH_ENABLE
+le => qq[1]$latch.LATCH_ENABLE
+le => qq[2]$latch.LATCH_ENABLE
+le => qq[3]$latch.LATCH_ENABLE
+dd[0] => qq[0]$latch.DATAIN
+dd[1] => qq[1]$latch.DATAIN
+dd[2] => qq[2]$latch.DATAIN
+dd[3] => qq[3]$latch.DATAIN
+qq[0] <= qq[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+qq[1] <= qq[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+qq[2] <= qq[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+qq[3] <= qq[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
