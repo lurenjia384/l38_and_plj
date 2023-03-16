@@ -1,0 +1,44 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
+
+entity Eight_Level_Adjustable_Divider is
+  port (
+    clk: in std_logic;
+    rst: in std_logic;
+    input_val: in unsigned(7 downto 0);
+    output_val: out unsigned(7 downto 0)
+  );
+end Eight_Level_Adjustable_Divider;
+
+architecture Behavioral of Eight_Level_Adjustable_Divider is
+
+  -- Internal signals and constants
+  signal counter : unsigned(2 downto 0) := (others => '0');
+  constant max_value : unsigned(7 downto 0) := "11111111";
+  constant step_size : unsigned(7 downto 0) := max_value / 8;
+
+begin
+
+  -- Process to update the output value based on the input value and counter
+  process(clk, rst)
+  begin
+    if rst = '1' then  -- Reset
+      output_val <= (others => '0');
+      counter <= (others => '0');
+    elsif rising_edge(clk) then  -- Clock edge
+      if counter = "111" then  -- At last step, output = input value
+        output_val <= input_val;
+        counter <= (others => '0');
+      else  -- Not at last step, adjust output value
+        if input_val >= max_value - step_size * counter then
+          output_val <= max_value - step_size * counter;
+        else
+          output_val <= input_val;
+        end if;
+        counter <= counter + 1;
+      end if;
+    end if;
+  end process;
+
+end Behavioral;

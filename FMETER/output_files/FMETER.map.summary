@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Mar 16 13:58:52 2023
+Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Full Version
+Revision Name : FMETER
+Top-level Entity Name : FMETER
+Family : Cyclone IV E
+Total logic elements : 191
+    Total combinational functions : 190
+    Dedicated logic registers : 76
+Total registers : 76
+Total pins : 47
+Total virtual pins : 0
+Total memory bits : 4,096
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
